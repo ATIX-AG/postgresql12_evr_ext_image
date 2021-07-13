@@ -164,6 +164,13 @@ RUN set -ex; \
 	\
 	postgres --version
 
+# add evr extension to Container
+RUN apt-get update; \
+apt-get -y install git make; \
+git clone https://github.com/Katello/postgresql-evr.git; \
+cp postgresql-evr/evr.control /usr/share/postgresql/12/extension; \
+cp postgresql-evr/evr--0.0.2.sql /usr/share/postgresql/12/extension
+
 # make the sample config easier to munge (and "correct by default")
 RUN set -eux; \
 	dpkg-divert --add --rename --divert "/usr/share/postgresql/postgresql.conf.sample.dpkg" "/usr/share/postgresql/$PG_MAJOR/postgresql.conf.sample"; \
