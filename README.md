@@ -1,7 +1,7 @@
 ## Postgresql12 with evr extension
 
 This repository hosts a Docker image that can be used to provide a postgresql12 service container with evr extension.
-The image has been taken from the official Docker image repository (see below) and modified to add the [evr extension](https://github.com/Katello/postgresql-evr).
+The image has been taken from the [official Docker image repository](https://github.com/docker-library/postgres) and modified to add the [evr extension](https://github.com/Katello/postgresql-evr).
 
 Current state: commit [6bbf1c7](https://github.com/docker-library/postgres/commit/6bbf1c7b308d1c4288251d73c37f6caf75f8a3d4).
 
